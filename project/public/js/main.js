@@ -4,6 +4,8 @@ const city_name=document.getElementById('city_name');
 const temp_real_val=document.getElementById('temp_real_val');
 const temp_status=document.getElementById('temp_status');
 const dataHide=document.querySelector('.middle_layer');
+let API_KEY="e4dccb5968be089446d98869cf1ba58d"
+
 
 const getInfo=async(event)=>
 {
@@ -16,7 +18,7 @@ const getInfo=async(event)=>
     }
     else{
         try{
-            let url=`https://api.openweathermap.org/data/2.5/weather?q=${cityVal},IN&appid=${your_api_id}`;
+            const url=`https://api.openweathermap.org/data/2.5/weather?q=${cityVal},IN&appid=${API_KEY}`;
             const response=await fetch(url);
             const data=await response.json();
             console.log(data);
